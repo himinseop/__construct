@@ -11,11 +11,10 @@ export LANGUAGE=ko_KR.UTF-8
 # User specific aliases and functions
 #
 ## aliases 'ls'
-alias ls="ls -hF --color"
+alias ls="ls -hF"
 alias l="ls -l"
 alias lh="ls -lh .[a-zA-Z0-9]*"
-alias ll="ls -lh | more"
-alias lla="ls -lha"
+alias ll="ls -alh | more"
 alias lx='ls -lXB'  # 확장자별 정렬
 alias lk='ls -lSr'  # 크기별
 alias la='ls -Al'  # hidden file view
@@ -130,7 +129,7 @@ ALERT=${BWhite}${On_Red} # Bold White on red background
 
 
 echo -e "${Cyan}This is BASH ${Red}${BASH_VERSION%.*}${Cyan}\
-		 - DISPLAY on ${Red}$DISPLAY${NC}\n"
+- DISPLAY on ${Red}$DISPLAY${NC}\n"
 		 date
 		 if [ -x /usr/games/fortune ]; then
 			 /usr/games/fortune -s     # Makes our day a bit more fun.... :-)
