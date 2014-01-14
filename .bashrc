@@ -8,10 +8,12 @@ export LC_ALL=ko_KR.UTF-8
 export LANG=ko_KR.UTF-8
 export LANGUAGE=ko_KR.UTF-8
 
+export CLICOLOR=1
+export LSCOLORS=DxGxcxdxCxegedabagacad
+
 # User specific aliases and functions
 #
 ## aliases 'ls'
-alias ls="ls -hF"
 alias l="ls -l"
 alias lh="ls -lh .[a-zA-Z0-9]*"
 alias ll="ls -alh | more"
