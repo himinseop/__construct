@@ -15,8 +15,8 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 #
 ## aliases 'ls'
 alias l="ls -l"
+alias ll="ls -al"
 alias lh="ls -lh .[a-zA-Z0-9]*"
-alias ll="ls -alh | more"
 alias lx='ls -lXB'  # 확장자별 정렬
 alias lk='ls -lSr'  # 크기별
 alias la='ls -Al'  # hidden file view
