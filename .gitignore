@@ -15,7 +15,6 @@
 .softforum/
 .ssh/
 .subversion/
-.vim/.netrwhist
 .viminfo
 Applications/
 Desktop/
@@ -26,3 +25,12 @@ Movies/
 Music/
 Pictures/
 Public/
+
+.composer/
+.mysql_history
+bak/
+docs
+html
+public_html/
+scripts/
+src/

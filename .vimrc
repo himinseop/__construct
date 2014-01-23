@@ -29,13 +29,14 @@ set cinwords=if,else,while,do,for,switch,case,default,foreach
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-set expandtab
+set noexpandtab
 set history=20000
 set complete+=k~/.vim/plugin/php_functions
 set keywordprg=~/.vim/script/phpman.sh
 set noet "TAB 들여쓰기
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " color
 " set background=dark " dark|light
 " colorscheme evening
@@ -46,10 +47,15 @@ set t_md=
 
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TAB
 map <TAB> :tabnext<CR>
 
+" 오류 체크
+map <C-k> :!php -l %<CR>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TagList 설정
 nnoremap <silent> <F3> :Tlist<CR>
 nnoremap <silent> <F4> :TlistUpdate<CR>:TlistToggle<CR>
@@ -77,9 +83,15 @@ map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PHP Doc
 source ~/.vim/plugin/php-doc.vim
 inoremap <C-C> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-C> :call PhpDocSingle()<CR>
 vnoremap <C-C> :call PhpDocRange()<CR> 
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 오타 수정
+ab functino function
+ab fn function
