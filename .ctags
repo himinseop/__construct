@@ -1,0 +1,7 @@
+-R
+--exclude=.svn
+--tag-relative=yes
+--PHP-kinds=+cf-v
+--regex-PHP=/abstracts+classs+([^ ]+)/1/c/
+--regex-PHP=/interfaces+([^ ]+)/1/c/
+--regex-PHP=/(publics+|statics+|abstracts+|protecteds+|privates+)functions+&?s*([^ (]+)/2/f/
