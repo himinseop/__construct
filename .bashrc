@@ -94,7 +94,6 @@ export DISPLAY
 # For example, I see 'Bold Red' as 'orange' on my screen,
 # hence the 'Green' 'BRed' 'Red' sequence I often use in my prompt.
 
-
 # Normal Colors
 Black='\e[0;30m'        # Black
 Red='\e[0;31m'          # Red
@@ -129,17 +128,15 @@ NC="\e[m"               # Color Reset
 
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
+echo -e "${Cyan}This is BASH ${Red}${BASH_VERSION%.*}${Cyan} - DISPLAY on ${Red}$DISPLAY${NC}"
+echo -e "${BYellow}${On_Cyan}$(date)${NC}"
+if [ -x /usr/games/fortune ]; then
+	/usr/games/fortune -s     # Makes our day a bit more fun.... :-)
+fi
 
-echo -e "${Cyan}This is BASH ${Red}${BASH_VERSION%.*}${Cyan} - DISPLAY on ${Red}$DISPLAY${NC}\n"
-		 date
-		 if [ -x /usr/games/fortune ]; then
-			 /usr/games/fortune -s     # Makes our day a bit more fun.... :-)
-			 fi
-
-			 function _exit()              # Function to run upon exit of shell.
+function _exit()              # Function to run upon exit of shell.
 {
-		echo -e "${Red}Hasta la vista, baby${NC}"
+	echo -e "${Red}Hasta la vista, baby${NC}"
 }
 trap _exit EXIT
-
 
