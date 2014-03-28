@@ -175,4 +175,4 @@ branch_color ()
    echo -ne $color
 }
 
-export PS1='\u@\h\[${c_sgr0}\]:\W\[${c_sgr0}\] \[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]\$ '
+export PS1='\u@\h\[${c_sgr0}\]:$PWD\[${c_sgr0}\] \[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]\$ '
