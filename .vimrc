@@ -34,6 +34,13 @@ set history=20000
 set complete+=k~/.vim/plugin/php_functions
 set keywordprg=~/.vim/script/phpman.sh
 set noet "TAB 들여쓰기
+set fileformat=unix
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 검색된 단어 하이라이트
+set hlsearch
+nnoremap * *N
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -80,7 +87,6 @@ let Tlist_Close_On_Select = 1
 " 수정:http://amix.dk/blog/post/19329
 map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
