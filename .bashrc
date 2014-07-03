@@ -128,8 +128,7 @@ NC="\e[m"               # Color Reset
 
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
-echo -e "${Cyan}This is BASH ${Red}${BASH_VERSION%.*}${Cyan} - DISPLAY on ${Red}$DISPLAY${NC}"
-echo -e "${BYellow}${On_Cyan}$(date)${NC}"
+echo -e "${Cyan}This is BASH ${Red}${BASH_VERSION%.*}${Cyan}${NC}"
 if [ -x /usr/games/fortune ]; then
 	/usr/games/fortune -s     # Makes our day a bit more fun.... :-)
 fi
@@ -175,4 +174,4 @@ branch_color ()
    echo -ne $color
 }
 
-export PS1='\u@\h\[${c_sgr0}\]:$PWD\[${c_sgr0}\] \[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]\$ '
+export PS1="${Cyan}\u${NC}@\h\[${c_sgr0}\]:$PWD\[${c_sgr0}\] \[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]\$ "
