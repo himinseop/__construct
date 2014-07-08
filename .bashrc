@@ -177,8 +177,8 @@ branch_color ()
 MYPSDIR_AWK=$(cat << 'EOF'
 BEGIN { FS = OFS = "/" }
 		{ 
-		   if (length($0) > 30 && NF > 4)
-				 print $1,$2,$3,".." NF-4 "..",$(NF-1),$NF
+		   if (length($0) > 30 && NF > 5)
+				 print $1,$2,$3,".." NF-5 "..",$(NF-1),$NF
 			else
 				print $0
 		}
