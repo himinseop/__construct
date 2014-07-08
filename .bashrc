@@ -190,7 +190,9 @@ export MYPSDIR='$(echo -n "${PWD/#$HOME/~}" | awk "$MYPSDIR_AWK")'
 
 # the fancy colorized prompt: [0 user@host ~]%
 # return code is in green, user@host is in bold/white
-export PS1='[\[\033[1;32m\]$?\[\033[0;0m\] \[\033[0;1m\]\u@\h\[\033[0;0m\] $(eval "echo ${MYPSDIR}")] $ '
+#export PS1='[\[\033[1;32m\]$?\[\033[0;0m\] \[\033[0;1m\]\u@\h\[\033[0;0m\] $(eval "echo ${MYPSDIR}")] $ '
+export PS1='\[\033[0;1m\]\u@$(branch_color)$(parse_git_branch)\[\033[0;0m\] $(eval "echo ${MYPSDIR}") $ '
 
 # set x/ssh window title as well
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} $(eval "echo ${MYPSDIR}")\007"'
+#export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} $(eval "echo ${MYPSDIR}")\007"'
+#export PROMPT_COMMAND='echo -ne "${USER}@$(branch_color)$(parse_git_branch)${NC} $(eval "echo ${MYPSDIR}")\007"'
