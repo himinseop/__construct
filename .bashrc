@@ -140,12 +140,11 @@ function _exit()              # Function to run upon exit of shell.
 trap _exit EXIT
 
 
-# GIT Branch
-#c_cyan=`tput setaf 6`
-#c_red=`tput setaf 1`
-#c_green=`tput setaf 2`
-c_sgr0=`tput sgr0`
+#-------------------------------------------------------------
+# Prompt
+#-------------------------------------------------------------
 
+# GIT Branch
 parse_git_branch ()
 {
    if git rev-parse --git-dir >/dev/null 2>&1
@@ -174,4 +173,24 @@ branch_color ()
    echo -ne $color
 }
 
-export PS1="${Cyan}\u${NC}@\h\[${c_sgr0}\]:$PWD\[${c_sgr0}\] \[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]\$ "
+# define the awk script using heredoc notation for easy modification
+MYPSDIR_AWK=$(cat << 'EOF'
+BEGIN { FS = OFS = "/" }
+		{ 
+		   if (length($0) > 30 && NF > 4)
+				 print $1,$2,$3,".." NF-4 "..",$(NF-1),$NF
+			else
+				print $0
+		}
+EOF
+)
+
+# my replacement for \w prompt expansion
+export MYPSDIR='$(echo -n "${PWD/#$HOME/~}" | awk "$MYPSDIR_AWK")'
+
+# the fancy colorized prompt: [0 user@host ~]%
+# return code is in green, user@host is in bold/white
+export PS1='[\[\033[1;32m\]$?\[\033[0;0m\] \[\033[0;1m\]\u@\h\[\033[0;0m\] $(eval "echo ${MYPSDIR}")] $ '
+
+# set x/ssh window title as well
+export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} $(eval "echo ${MYPSDIR}")\007"'
