@@ -4,6 +4,8 @@
 .config/
 .cups/
 .deliverycenter.installs
+.DS_Store
+.dropbox/
 .eclipse/
 .filezilla/
 .gitconfig
@@ -15,9 +17,12 @@
 .softforum/
 .ssh/
 .subversion/
+.vagrant.d/
 .viminfo
 Applications/
+Cloud/
 Desktop/
+Dev/
 Documents/
 Downloads/
 Library/
@@ -25,6 +30,7 @@ Movies/
 Music/
 Pictures/
 Public/
+VirtualBox VMs/
 
 .composer/
 .mysql_history
