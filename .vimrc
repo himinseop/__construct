@@ -22,18 +22,18 @@ au BufNewFile,BufRead jquery.*.js set filetype=javascript syntax=jquery
 " http://www.vim.org/scripts/script.php?script_id=1945
 au! BufNewFile,BufRead *.json set filetype=json
 
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab       " set et : tab = 4 spaces
+"set noexpandtab    " set noet  : tab = \t
 set number
 set cindent "C 스타일의 들여쓰기
 "set nocindent
 set cinwords=if,else,while,do,for,switch,case,default,foreach
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set noexpandtab
 set history=20000
 set complete+=k~/.vim/plugin/php_functions
 set keywordprg=~/.vim/script/phpman.sh
-set noet "TAB 들여쓰기
 set fileformat=unix
 
 
