@@ -40,4 +40,4 @@ else
 fi
 
 # set kernel parameters
-/sbin/sysctl -p
+#/sbin/sysctl -p
