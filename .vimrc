@@ -57,6 +57,7 @@ set t_md=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TAB
 map <TAB> :tabnext<CR>
+map <C-TAB> :tabprev<CR>
 
 " 오류 체크
 map <C-k> :!php -l %<CR>
@@ -101,3 +102,9 @@ vnoremap <C-C> :call PhpDocRange()<CR>
 " 오타 수정
 ab functino function
 ab fn function
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Resize splits more quickly
+" https://vim.fandom.com/wiki/Resize_splits_more_quickly
+"nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+"nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
